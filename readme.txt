@@ -4,7 +4,7 @@ Tags: RSS, fix RSS, broken feed
 Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RMCSV4J9FALZ6
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable Tag:1.1
+Stable Tag:1.2
 
 
 This is a simple yet powerful plugin to repair your wordpress RSS feed. If you get an "XML Parsing Error: XML or text declaration not at start of entity" on your feed, this is the fix.
@@ -36,3 +36,6 @@ Code sources from: http://wejn.org/stuff/wejnswpwhitespacefix.php.html
 == Changelog ==
 1.0
 Plugin created
+
+1.2
+Added warning message for users of W3 Total Cache which can sometimes cause a conflict and instructions on how to fix it if it does.

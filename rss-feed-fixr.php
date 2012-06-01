@@ -4,7 +4,7 @@ Plugin Name: Fix My Feed RSS Repair
 Plugin URI: http://www.whereyoursolutionis.com/rss-fix/
 Description: This plugin was made to fix issues with whitespace in your rss feeds.  If you get an error and have not been able to resolve your feed issues than this plugin is what you need.  RSS repair adds a new item to your wordpress tools menu. After you do a core update, apply the fix and your feed will be as good as new.   
 Author: Innovative Solutions
-Version:1.1
+Version:1.2
 Author URI: http://www.whereyoursolutionis.com/author/scriptonite/
 */
 
@@ -30,7 +30,7 @@ die('There was an error activating the plugin');
 
 }
 
-
+update_option('fix_my_feed_dismissit','show');
 
 }
 
@@ -53,6 +53,19 @@ function add_rssFixer(){
  
  echo '<h2>Rss Feed Fix</h2><div class="wrap">';
  
+ if(!empty($_GET['ok'])=='ok') {
+ 
+ 
+ update_option('fix_my_feed_dismissit','hide');
+ 
+ }
+ 
+ if(is_plugin_active('w3-total-cache/w3-total-cache.php') && get_option('fix_my_feed_dismissit')=="show"){
+ 
+ echo '<div id="Message" class="error">If your feed is not fixed after applying the patch it may be because you have W3 Total Cache installed. You may need to go <a href="admin.php?page=w3tc_pgcache"> W3 Total Cache page settings</a> and uncheck the Cache feeds: site, categories, tags, comments box. <a href="tools.php?page=rss-fix-my-feed&ok=ok">Dismiss</a></div>'; 
+ 
+ }
+ 
 		 if (isset($_POST['fixfeed'])){
 		$file = ABSPATH.'wp-content/plugins/fix-my-feed-rss-repair/fix.php';
 		$newfile = ABSPATH.'index.php';
@@ -60,7 +73,13 @@ function add_rssFixer(){
 					if (!copy($file, $newfile)) {
 						echo 'Patch Failed!<br /> Please try again, execute the patch manually, or contact Innovative Solutions for help';
 					}else{
-					echo 'Fix applied successfully. You can check it <a href="'.site_url().'/feed">here</a>.';
+					echo 'Fix applied successfully. You can check it <a href="'.site_url().'/feed" target="_blank">here</a>.</br>';
+					
+					 if(is_plugin_active('w3-total-cache/w3-total-cache.php') ){
+ 
+					 echo 'If your feed is not fixed after applying the patch it may be because you have W3 Total Cache installed. You may need to go <a href="admin.php?page=w3tc_pgcache"> W3 Total Cache page settings</a> and uncheck the Cache feeds: site, categories, tags, comments box.'; 
+					 
+					 }
 
 					}
 					?>
