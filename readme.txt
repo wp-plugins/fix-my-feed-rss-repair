@@ -1,5 +1,6 @@
 === Fix My Feed RSS Repair ===
-Contributors: Innovative Solutions
+Author:Innovative Solutions 
+Contributors: Scriptonite
 Tags: RSS, fix RSS, broken feed
 Donate:https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RMCSV4J9FALZ6
 Requires at least: 3.0
@@ -30,7 +31,6 @@ Code sources from: http://wejn.org/stuff/wejnswpwhitespacefix.php.html
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
-
 
 
 == Changelog ==
