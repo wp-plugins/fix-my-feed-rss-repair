@@ -4,7 +4,7 @@ Plugin Name: Fix My Feed RSS Repair
 Plugin URI: http://www.whereyoursolutionis.com/rss-fix/
 Description: This plugin was made to fix issues with whitespace in your rss feeds.  If you get an error and have not been able to resolve your feed issues than this plugin is what you need.  RSS repair adds a new item to your wordpress tools menu. After you do a core update, apply the fix and your feed will be as good as new.   
 Author: Innovative Solutions
-Version:1.2
+Version:1.3
 Author URI: http://www.whereyoursolutionis.com/author/scriptonite/
 */
 
